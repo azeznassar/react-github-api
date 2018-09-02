@@ -1,5 +1,6 @@
 import React from 'react';
 import Github from '../Github/Github';
+import './InputForm.css';
 
 class InputForm extends React.Component {
     constructor(props) {
@@ -26,12 +27,9 @@ class InputForm extends React.Component {
     render() {
         if (!this.state.submitted) {
             return (
-                <form>
-                    <label>
-                        username:
-                        <input type="text" value={this.state.input} onChange={this.handleChange} />
-                    </label>
-                    <input type="submit" value="Submit" onClick={this.handleSubmit} />
+                <form className="inputForm">
+                    <input className="username" type="text" value={this.state.input} onChange={this.handleChange} />
+                    <input className="submitButton" type="submit" value="Search for user" onClick={this.handleSubmit} />
                 </form>  
             );
         }

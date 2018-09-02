@@ -1,4 +1,10 @@
 .app {
     text-align: center;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', sans-serif;
+}
+
+.appHeader {
+    padding: 10px;
+    color: #605ece;
+    background: #252525;
 }

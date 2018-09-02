@@ -7,7 +7,9 @@ class App extends React.Component {
     render(){
         return (
             <div className="app">
-                <h2>Github profile lookup</h2>
+                <div className="appHeader">
+                    <h2>Github profile lookup</h2>
+                </div>
                 <InputForm />
             </div>
         );

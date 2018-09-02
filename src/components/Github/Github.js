@@ -1,6 +1,6 @@
 import React from 'react';
 import Loading from '../Loading/Loading';
-import Repo from './Repo';
+import Repo from '../Repo/Repo';
 
 class Github extends React.Component {
     constructor(props) {
@@ -83,7 +83,7 @@ class Github extends React.Component {
                 </div>
                 <div>
                     <h3>Repos</h3>
-                    {repos.map(repo => { return (
+                    {repos.map(repo => { return ( // TODO get description and make cards?
                         <div key={repo.id}>
                             <Repo name={repo.full_name} stargazers={repo.stargazers_count}/>
                         </div>
@@ -95,7 +95,3 @@ class Github extends React.Component {
 }
 
 export default Github;
-
-
-// `https://api.github.com//user/${this.props.username}/followers` 
-// `https://api.github.com//user/${this.props.username}/following`
