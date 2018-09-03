@@ -16,7 +16,10 @@ class Github extends React.Component {
     }
 
     componentDidMount() {
-        fetch(`https://api.github.com/users/${this.props.username}`)
+        const currentUsername = this.props.match.params.username;
+
+        // TODO put these into fetchData() function
+        fetch(`https://api.github.com/users/${currentUsername}`)
             .then(response => {
                 if(!response.ok) {
                     throw Error('Network request failed');
@@ -34,7 +37,7 @@ class Github extends React.Component {
                     invalidUsername: true
                 });
             });
-        fetch(`https://api.github.com/users/${this.props.username}/repos`)
+        fetch(`https://api.github.com/users/${currentUsername}/repos`)
             .then(resp => {
                 if(!resp.ok) {
                     throw Error('Network reuqest failed');

@@ -1,0 +1,27 @@
+.notFound {
+    width: 100%;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.notFoundTitle {
+    font-weight: 400;
+    color: #252525;
+}
+
+
+.notFoundLink {
+    display: inline-block;
+    margin-top: 40px;
+    color: #605ece;
+    text-decoration: none;
+    border: 1px solid #605ece;
+    border-radius: 4px;
+    padding: 18px;
+    transition: border .2s;
+}
+
+.notFoundLink:hover {
+    border: 1px solid #252525;
+    color: #252525;
+}
