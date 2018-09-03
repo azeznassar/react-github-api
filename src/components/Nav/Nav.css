@@ -1,0 +1,22 @@
+.navBar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1em;
+}
+
+.navBar a {
+    margin: 1em;
+    font-size: 20px;
+    text-decoration: none;
+    color: #252525;
+}
+
+.navBar span {
+    padding: 2px 5px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #252525;
+    background-color: #605ece7e;
+    border-radius: 20px;
+}

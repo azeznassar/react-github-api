@@ -8,7 +8,7 @@ class App extends React.Component {
         return (
             <div className="app">
                 <div className="appHeader">
-                    <h2>Github profile lookup</h2>
+                    <h1>Github profile lookup</h1>
                 </div>
                 <InputForm />
             </div>

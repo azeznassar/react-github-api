@@ -1,6 +1,8 @@
 import React from 'react';
+import './Github.css';
 import Loading from '../Loading/Loading';
 import Repo from '../Repo/Repo';
+import Nav from '../Nav/Nav';
 
 class Github extends React.Component {
     constructor(props) {
@@ -71,19 +73,22 @@ class Github extends React.Component {
         return (  
             <div>
                 <div>
-                    <h1>{data.name}</h1>
-                    <p><a href={data.html_url}>View Github profile</a></p>
-                    <img src={data.avatar_url} width="100" height="100" alt="Github Avatar" style={{borderRadius: '50%'}}/>
-                    <ul>
-                        <li>Repos: {data.public_repos}</li>
-                        <li>Gists: {data.public_gists}</li>
-                        <li>Followers: {data.followers}</li>
-                        <li>Following: {data.following}</li>
-                    </ul>
+                    <div>
+                        <img src={data.avatar_url} width="230" height="230" alt="Github Avatar" style={{borderRadius: '50%'}}/>
+                        <h3>{data.name}</h3>
+                        <h4 className="login">{data.login}</h4>
+                        <p>{data.bio}</p>
+                        <p><a href={data.html_url}>View Github profile</a></p>
+                    </div>
+                    <Nav 
+                        repos={data.public_repos}
+                        followers={data.followers}
+                        following={data.following}
+                    />
                 </div>
                 <div>
                     <h3>Repos</h3>
-                    {repos.map(repo => { return ( // TODO get description and make cards?
+                    {repos.map(repo => { return ( // TODO get description and make cards? make into component!
                         <div key={repo.id}>
                             <Repo name={repo.full_name} stargazers={repo.stargazers_count}/>
                         </div>
