@@ -1,7 +1,7 @@
 import React from 'react';
 import './Github.css';
 import Loading from '../Loading/Loading';
-import Repo from '../Repo/Repo';
+import Repos from '../Repos/Repos';
 import Nav from '../Nav/Nav';
 
 class Github extends React.Component {
@@ -17,11 +17,14 @@ class Github extends React.Component {
 
     componentDidMount() {
         const currentUsername = this.props.match.params.username;
+        this.fetchUserData(currentUsername);
+        this.fetchRepos(currentUsername);
+    }
 
-        // TODO put these into fetchData() function
-        fetch(`https://api.github.com/users/${currentUsername}`)
+    fetchUserData(username) {
+        fetch(`https://api.github.com/users/${username}`)
             .then(response => {
-                if(!response.ok) {
+                if (!response.ok) {
                     throw Error('Network request failed');
                 }
                 return response;
@@ -37,19 +40,19 @@ class Github extends React.Component {
                     invalidUsername: true
                 });
             });
-        fetch(`https://api.github.com/users/${currentUsername}/repos`)
+    }
+
+    fetchRepos(username) {
+        fetch(`https://api.github.com/users/${username}/repos`)
             .then(resp => {
                 if(!resp.ok) {
-                    throw Error('Network reuqest failed');
+                    throw Error('Network request failed');
                 }
                 return resp;
             })
             .then(data => data.json())
             .then(data => {
-                this.setState({
-                    repos: data 
-                    //dataLoaded: true
-                });
+                this.setState({ repos: data });
             });
     }
 
@@ -75,13 +78,13 @@ class Github extends React.Component {
 
         return (  
             <div>
-                <div>
-                    <div>
-                        <img src={data.avatar_url} width="230" height="230" alt="Github Avatar" style={{borderRadius: '50%'}}/>
+                <div className="infoContainer">
+                    <div className="info">
+                        <img src={data.avatar_url} width="230" height="230" alt="Github Avatar" />
                         <h3>{data.name}</h3>
                         <h4 className="login">{data.login}</h4>
                         <p>{data.bio}</p>
-                        <p><a href={data.html_url}>View Github profile</a></p>
+                        <a href={data.html_url} className="profileBtn">View Github profile</a>
                     </div>
                     <Nav 
                         repos={data.public_repos}
@@ -89,14 +92,7 @@ class Github extends React.Component {
                         following={data.following}
                     />
                 </div>
-                <div>
-                    <h3>Repos</h3>
-                    {repos.map(repo => { return ( // TODO get description and make cards? make into component!
-                        <div key={repo.id}>
-                            <Repo name={repo.full_name} stargazers={repo.stargazers_count}/>
-                        </div>
-                    ); })}
-                </div>
+                <Repos data={repos}/>
             </div>
         );
     }
