@@ -1,15 +1,20 @@
 import React from 'react';
+import './Repo.css';
 
 class Repo extends React.Component {
-    render() { // TODO remove inline styles
+    render() {
         return (
-            <div> 
-                <a href={`https://github.com/${this.props.name}`} style={{textDecoration: 'none'}} >
+            <div className="repo"> 
+                <a href={`https://github.com/${this.props.name}`} target="_blank" rel="noopener noreferrer" >
                     <h2>{this.props.name}</h2>
                 </a>
-                <a href={`https://github.com/${this.props.name}/stargazers`} style={{textDecoration: 'none'}} >
+                <p>{this.props.desc}</p>
+                <a href={`https://github.com/${this.props.name}/stargazers`} target="_blank" rel="noopener noreferrer" >
                     <p><span role="img" aria-label="Star Emoji">⭐</span> {this.props.stargazers}</p> 
                 </a>    
+                <a href={`https://github.com/${this.props.name}/network`} target="_blank" rel="noopener noreferrer" >
+                    <p><span role="img" aria-label="Fork Emoji">🍴</span> {this.props.forks}</p> 
+                </a> 
             </div>    
         );
     }

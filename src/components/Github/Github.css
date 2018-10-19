@@ -2,14 +2,9 @@
     font-weight: 300;
 }
 
-.infoContainer {
-    display: flex;
-    margin: 0 9rem;
-    height: 150px;
-}
-
 .info {
     padding: 1rem;
+    float: left;
 }
 
 .info img {

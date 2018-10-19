@@ -1,5 +1,15 @@
 .appHeader {
-    padding: 10px;
-    color: #605ece;
+    padding: 5px;
     background: #252525;
+}
+
+.headerTitle {
+    text-decoration: none;
+    color: #605ece;
+    font-size: .75rem;
+}
+
+.headerTitle:hover {
+    color: #4946dd;
+    transition: 4ms ease-in all;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 import InputForm from './components/InputForm/InputForm';
 import Github from './components/Github/Github';
 import NotFound from './components/NotFound/NotFound';
@@ -12,7 +12,9 @@ class App extends React.Component {
             <BrowserRouter>
                 <div>
                     <div className="appHeader">
-                        <h1>Github profile lookup</h1>
+                        <Link className="headerTitle" to="/">
+                            <h1>Github profile lookup</h1>
+                        </Link>
                     </div>
                     <Switch>
                         <Route path="/" component={InputForm} exact /> 
@@ -22,7 +24,7 @@ class App extends React.Component {
                     </Switch>
                 </div>
             </BrowserRouter>
-        ); // do I want to remove the exact?
+        );
     }
 }
 

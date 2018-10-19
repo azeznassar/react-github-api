@@ -78,19 +78,17 @@ class Github extends React.Component {
 
         return (  
             <div>
-                <div className="infoContainer">
-                    <div className="info">
-                        <img src={data.avatar_url} width="230" height="230" alt="Github Avatar" />
-                        <h3>{data.name}</h3>
-                        <h4 className="login">{data.login}</h4>
-                        <p>{data.bio}</p>
-                        <a href={data.html_url} className="profileBtn">View Github profile</a>
-                    </div>
-                    <Nav 
-                        repos={data.public_repos}
-                        followers={data.followers}
-                        following={data.following}
-                    />
+                <Nav
+                    repos={data.public_repos}
+                    followers={data.followers}
+                    following={data.following}
+                />
+                <div className="info">
+                    <img src={data.avatar_url} width="230" height="230" alt="Github Avatar" />
+                    <h3>{data.name}</h3>
+                    <h4 className="login">{data.login}</h4>
+                    <p>{data.bio}</p>
+                    <a href={data.html_url} target="_blank" rel="noopener noreferrer" className="profileBtn">View Github profile</a>
                 </div>
                 <Repos data={repos}/>
             </div>

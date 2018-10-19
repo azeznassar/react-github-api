@@ -5,7 +5,7 @@ const Nav = (props) => {
     return (
         <div className="profileNav">
             <nav className="navBar">
-                <a href="/repos">Repos: <span>{props.repos}</span></a>
+                <a href="/repos" className="reposLink">Repos: <span>{props.repos}</span></a>
                 <a href="/followers">Followers: <span>{props.followers}</span></a>
                 <a href="/following">Following: <span>{props.following}</span></a>
             </nav>
