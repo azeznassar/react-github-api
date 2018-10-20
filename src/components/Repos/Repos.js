@@ -5,16 +5,17 @@ import './Repos.css';
 const Repos = (props) => {
     return (
         <React.Fragment>
-            <h2 className="repoTitle">Public repositories</h2>
+            <h2 className="reposTitle">Public repositories</h2>
             <div className="profileRepos">
                 {props.data.map(repo => {
                     return (
                         <Repo
                             key={repo.id}
-                            name={repo.full_name}
+                            name={repo.name} // full_name for username/repo-name
                             stargazers={repo.stargazers_count}
                             desc={repo.description}
                             forks={repo.forks}
+                            language={repo.language}
                         />
                     );
                 })}           
