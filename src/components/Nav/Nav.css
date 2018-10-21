@@ -7,7 +7,7 @@
 
 .navBar a {
     margin: 1em;
-    font-size: 20px;
+    font-size: 16px;
     text-decoration: none;
     color: #252525;
 }
@@ -23,4 +23,15 @@
 
 .profileNav {
     border-bottom: solid 1px #d1d5da;
+}
+
+@media screen and (max-width: 600px) {
+    .navBar a {
+        font-size: 13px;
+    }
+
+    .navBar span {
+        padding: 1px 3px;
+        font-size: 10px;
+    }
 }

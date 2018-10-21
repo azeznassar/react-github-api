@@ -11,7 +11,8 @@ const Repos = (props) => {
                     return (
                         <Repo
                             key={repo.id}
-                            name={repo.name} // full_name for username/repo-name
+                            name={repo.name}
+                            full_name={repo.full_name}
                             stargazers={repo.stargazers_count}
                             desc={repo.description}
                             forks={repo.forks}
