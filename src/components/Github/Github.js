@@ -11,12 +11,14 @@ class Github extends React.Component {
             data: {},
             repos: [],
             dataLoaded: false,
-            invalidUsername: false
+            invalidUsername: false,
+            username: ''
         };
     }
 
     componentDidMount() {
         const currentUsername = this.props.match.params.username;
+        this.setState({ username: currentUsername });
         this.fetchUserData(currentUsername);
         this.fetchRepos(currentUsername);
     }
@@ -82,6 +84,7 @@ class Github extends React.Component {
                     repos={data.public_repos}
                     followers={data.followers}
                     following={data.following}
+                    user={this.state.username}
                 />
                 <div className="profileContainer">
                     <div className="info">

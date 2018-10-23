@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 import InputForm from './components/InputForm/InputForm';
 import Github from './components/Github/Github';
 import NotFound from './components/NotFound/NotFound';
+import Followers from './components/Followers/Followers';
 import './App.css';
 
 
@@ -19,7 +20,7 @@ class App extends React.Component {
                     <Switch>
                         <Route path="/" component={InputForm} exact /> 
                         <Route path="/user/:username" component={Github} exact/> 
-
+                        <Route path="/:username/followers" component={Followers} exact/> 
                         <Route component={NotFound} />
                     </Switch>
                 </div>
