@@ -2,7 +2,7 @@
     border: solid 1px #bac0c5;
     border-radius: 4px;
     margin: 1rem;
-    height: 150px;
+    height: 140px;
 }
 
 .repo a {
@@ -13,6 +13,7 @@
     display: flex;
     justify-content: center;
 }
+
 .repoItem {
     margin: .5rem;
 }

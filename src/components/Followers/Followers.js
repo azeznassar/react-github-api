@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Loading from '../Loading/Loading';
 
-export default class Followers extends Component {
+export default class Follow extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -12,11 +12,11 @@ export default class Followers extends Component {
 
     componentDidMount() {
         const currentUser = this.props.match.params.username;
-        this.fetchFollowers(currentUser);
+        this.fetchUsers(currentUser);
     }  
     
-    fetchFollowers(user) {
-        fetch(`https://api.github.com/users/${user}/followers`)
+    fetchUsers(user) {
+        fetch(`https://api.github.com/users/${user}/${this.props.query}`)
             .then(response => {
                 if (!response.ok) {
                     throw Error('Network request failed');
@@ -40,12 +40,12 @@ export default class Followers extends Component {
 
         return (
             <div>
-                {data.map(follower => {
+                {data.map(user => {
                     return (
-                        <div key={follower.id} className="follower">
-                            Username: {follower.login}
-                            <img src={follower.avatar_url} alt="Follower Avatar"/>
-                            <a href={follower.html_url}>Profile on Github</a>
+                        <div key={user.id} className="users">
+                            Username: {user.login}
+                            <img src={user.avatar_url} alt="User Avatar"/>
+                            <a href={user.html_url} target="_blank" rel="noopener noreferrer">Profile on Github</a>
                         </div>
                     );
                 })} 

@@ -21,10 +21,7 @@ class InputForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // this.setState({ submitted: true });
-        // //console.log(this.state.input);
-
-        this.props.history.push(`/user/${this.state.input}`);
+        this.props.history.push(`/${this.state.input}`);
     }
 
 
@@ -38,10 +35,7 @@ class InputForm extends React.Component {
             );
         }
 
-        return(
-            <Github username={this.state.input} />
-            //stuck
-        );
+        return <Github username={this.state.input} />;
     }
 }
 
