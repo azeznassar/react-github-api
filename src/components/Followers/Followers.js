@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Loading from '../Loading/Loading';
+import './Followers.css';
+import { Link } from 'react-router-dom';
 
 export default class Follow extends Component {
     constructor(props) {
@@ -42,10 +44,13 @@ export default class Follow extends Component {
             <div>
                 {data.map(user => {
                     return (
-                        <div key={user.id} className="users">
+                        <div key={user.id} className="user">
+                            <img src={user.avatar_url} alt="User Avatar" />
                             Username: {user.login}
-                            <img src={user.avatar_url} alt="User Avatar"/>
-                            <a href={user.html_url} target="_blank" rel="noopener noreferrer">Profile on Github</a>
+                            <div className="links">
+                                <Link to={`/${user.login}`}>View Profile</Link>
+                                <a href={user.html_url} target="_blank" rel="noopener noreferrer">View Profile on Github</a>                            
+                            </div>
                         </div>
                     );
                 })} 

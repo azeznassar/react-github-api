@@ -1,0 +1,33 @@
+.user {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: .5rem;
+    padding: .5rem;
+    border: 1px solid #999;
+}
+
+.user a {
+    color: #3a38a8;  
+    border-radius: 5px;
+    border: 2px solid #605ece;
+    padding: .5em;
+    margin: .3rem;
+    height: 20px;
+    text-decoration: none;
+}
+
+.user a:focus,
+.user a:hover {
+    border: 2px solid #252525;
+    color: #252525;
+}
+
+.user img {
+    height: 150px;
+    width: 150px;
+}
+
+.links {
+    display: flex;
+}
