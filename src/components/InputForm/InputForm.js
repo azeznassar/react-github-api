@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import Github from '../Github/Github';
 import './InputForm.css';
 
 class InputForm extends React.Component {
@@ -22,20 +21,21 @@ class InputForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.history.push(`/${this.state.input}`);
+        this.setState({ input: '' });
     }
 
 
     render() {
-        if (!this.state.submitted) {
-            return (
+
+        return (
+            <div>
                 <form className="inputForm">
                     <input className="username" type="text" value={this.state.input} onChange={this.handleChange} />
                     <input type="submit" className="submitButton" onClick={this.handleSubmit} value="Search for user" />
-                </form>  
-            );
-        }
-
-        return <Github username={this.state.input} />;
+                </form>
+            </div>
+        );
+        
     }
 }
 

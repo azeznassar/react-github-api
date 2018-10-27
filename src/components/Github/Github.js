@@ -17,13 +17,23 @@ class Github extends React.Component {
     }
 
     componentDidMount() {
-        const currentUsername = this.props.match.params.username;
-        this.setState({ username: currentUsername });
-        this.fetchUserData(currentUsername);
-        this.fetchRepos(currentUsername);
+        const currentUser = this.props.match.params.username;
+        this.setState({ username: currentUser });
+        this.fetchUserData(currentUser);
+        this.fetchRepos(currentUser);
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.location.pathname !== prevProps.location.pathname) {
+            const newUser = this.props.match.params.username;
+            this.setState({ username: newUser });
+            this.fetchUserData(newUser);
+            this.fetchRepos(newUser);
+        }
     }
 
     fetchUserData(username) {
+        this.setState({dataLoaded: false });
         fetch(`https://api.github.com/users/${username}`)
             .then(response => {
                 if (!response.ok) {
@@ -35,7 +45,8 @@ class Github extends React.Component {
             .then(data => {
                 this.setState({
                     data,
-                    dataLoaded: true
+                    dataLoaded: true,
+                    invalidUsername: false
                 });
             }, () => {
                 this.setState({

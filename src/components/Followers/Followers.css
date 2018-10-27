@@ -28,6 +28,24 @@
     width: 150px;
 }
 
-.links {
-    display: flex;
+.userLogin {
+    font-size: 20px;
 }
+
+@media only screen and (max-width: 800px) {
+    .user {
+        justify-content: center;
+        flex-direction: column;
+        margin: .1rem;
+    }
+
+    .user img, .links {
+        margin: 1.5rem;
+    }
+
+    .user a {
+        padding: .4em;
+        font-size: 14px;
+    }
+}
+

@@ -1,12 +1,13 @@
 .appHeader {
     padding: 5px;
-    background: #252525;
+    color: hsla(0,0%,100%,0.75);
+    background-color: #24292e;
 }
 
 .headerTitle {
     text-decoration: none;
     color: #605ece;
-    font-size: .75rem;
+    font-size: .7rem;
 }
 
 .headerTitle:hover {

@@ -46,7 +46,7 @@ export default class Follow extends Component {
                     return (
                         <div key={user.id} className="user">
                             <img src={user.avatar_url} alt="User Avatar" />
-                            Username: {user.login}
+                            <p className="userLogin">{user.login}</p>
                             <div className="links">
                                 <Link to={`/${user.login}`}>View Profile</Link>
                                 <a href={user.html_url} target="_blank" rel="noopener noreferrer">View Profile on Github</a>                            
