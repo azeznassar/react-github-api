@@ -11,7 +11,7 @@ $ npm install
 
 ### Run
 
-Run app on local dev server at http://localhost:1234/
+Run app on local dev server at http://localhost:1234/:
 
 ```sh
 $ npm start

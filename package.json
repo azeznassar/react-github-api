@@ -11,7 +11,7 @@
   "author": "Azez Nassar",
   "license": "MIT",
   "dependencies": {
-    "parcel-bundler": "^1.9.7",
+    "parcel-bundler": "^1.10.3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-router": "^4.3.1",
